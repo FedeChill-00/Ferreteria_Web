@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Mundo Ferretero</title>
+    <!-- CSS para login (fondo azul, centrado) -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a Mundo Ferretero</h1>
+        <p>Inicia sesión para acceder a los productos.</p>
+        
+        <!-- Toggle para Registro – VISIBLE -->
+        <button id="toggleRegistro" class="toggle-btn">¿Nuevo usuario? Registrarse</button>
+        
+        <!-- Formulario de Login -->
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="input-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <button type="submit" id="loginBtn">Ingresar</button>
+            <div id="errorMessage" class="mensaje"></div>
+        </form>
+        
+        <!-- Formulario de Registro – OCULTO inicialmente -->
+        <div id="registroSection" style="display: none;">
+            <h2>Registro de Nuevo Usuario</h2>
+            <form id="registroForm">
+                <div class="input-group">
+                    <label for="regUsername">Nuevo Usuario:</label>
+                    <input type="text" id="regUsername" name="regUsername" placeholder="">
+                </div>
+                <div class="input-group">
+                    <label for="regPassword">Nueva Contraseña (mín. 3 caracteres):</label>
+                    <input type="password" id="regPassword" name="regPassword" placeholder="">
+                </div>
+                <button type="submit" id="regSubmitBtn">Registrarse</button>
+                <div id="regMessage" class="mensaje"></div>
+            </form>
+            <!-- Botón para volver a login después de toggle -->
+            <button id="volverLogin" class="toggle-btn" style="margin-top: 10px;">Volver a Iniciar Sesión</button>
+        </div>
+    </div>
+
+    <!-- Scripts al final del body -->
+    <script src="js/main.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

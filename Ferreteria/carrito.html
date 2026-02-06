@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Mundo Ferretero</title>
+    <!-- Tus CSS existentes + nuevo para carrito -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/productos.css"> <!-- Si usas para cards -->
+    <link rel="stylesheet" href="css/carrito.css"> <!-- Nuevo: Estilos para carrito y formulario -->
+</head>
+<body>
+    <header>
+        <h1>Mundo Ferretero - Carrito</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="productos.html">Productos</a>
+            <!-- Logout ya funciona de main.js -->
+            <a href="#" id="logoutBtn" class="btn-logout">Cerrar Sesión</a>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="carrito-container">
+            <h2>Tu Carrito de Compras</h2>
+            <div id="carritoItems">
+                <!-- Items se cargan dinámicamente con JS -->
+                <p id="carritoVacio">Tu carrito está vacío. <a href="productos.html">Ve a comprar</a>.</p>
+            </div>
+            
+            <div id="carritoTotal" class="total-section" style="display: none;">
+                <h3>Total: $<span id="totalPrecio">0</span></h3>
+                <button id="confirmarCompra" class="btn-confirmar">Confirmar Compra</button>
+            </div>
+            
+            <!-- Formulario de Datos de Envío (oculto inicialmente) -->
+            <div id="formularioCompra" class="formulario-section" style="display: none;">
+                <h3>Completa tus Datos de Envío</h3>
+                <form id="datosEnvioForm">
+                    <div class="input-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido"required>
+                    </div>
+                    <div class="input-group">
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" id="direccion" name="direccion" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <button type="submit" class="btn-enviar">Enviar Pedido</button>
+                    <button type="button" id="cancelarCompra" class="btn-cancelar">Cancelar</button>
+                </form>
+            </div>
+            
+            <!-- Mensaje de Agradecimiento (oculto inicialmente) -->
+            <div id="mensajeAgradecimiento" class="mensaje-section" style="display: none;">
+                <h3>¡Compra Confirmada!</h3>
+                <p>Muchas gracias por tu compra, en cuanto tengamos novedades te enviaremos un correo, revisa la casilla de spam por la dudas. Muchas gracias, El Mundo Ferretero</p>
+                <button id="volverProductos" class="btn-volver">Volver a Productos</button>
+            </div>
+            
+            <div id="errorMessage" class="mensaje error"></div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Mundo Ferretero - Universidad Tecnológica Nacional</p>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="js/main.js"></script> <!-- Para verificación sesión y logout -->
+    <script src="js/carrito.js"></script> <!-- Nuevo: Lógica del carrito y formulario -->
+</body>
+</html>
